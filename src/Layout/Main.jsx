@@ -4,10 +4,11 @@ import { Outlet } from 'react-router-dom';
 const Main = () => {
     return (
         <div>
-            //dashboard aside
+            {/* dashboard aside */}
 
-            //Outlet
-            <Outlet />
+        <div>
+        <Outlet />
+        </div>
 
         </div>
     );
