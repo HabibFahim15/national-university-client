@@ -1,11 +1,9 @@
-import { Button } from "@material-tailwind/react";
-import { Link } from "react-router-dom";
+import React from 'react';
 
 const Dashboard = () => {
     return (
         <div>
-            <h1>This is Dashboard Page</h1><br />
-            <Link to={'/signin'}><Button>Login</Button></Link>
+            This is Dashboard 
         </div>
     );
 };
