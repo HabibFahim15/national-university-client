@@ -11,6 +11,7 @@ import Exam from "../Pages/Dashboard/admin/Exam";
 import Events from "../Pages/Dashboard/admin/Events";
 import Attendance from "../Pages/Dashboard/admin/Attendance";
 import Class from "../Pages/Dashboard/admin/Class";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
       children:[
         {
             path: '/',
-            element: <Dashboard />
+            element: <PrivateRoute><Dashboard /></PrivateRoute>
         },
         // admin dashboard
         {
