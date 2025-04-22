@@ -1,19 +1,29 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Menu } from "lucide-react"; // optional, for a toggle icon
 import { Link } from "react-router-dom";
 import { Outlet } from 'react-router-dom';
+import { AuthContext } from "../providers/AuthProvider";
 
 const Main = () => {
+  const {user, logOut} = useContext(AuthContext)
+
+    const handleLogOut = () =>{
+        logOut()
+        .then(()=>{})
+        .catch(error => console.log(error));
+    }
+
     const [sidebarOpen, setSidebarOpen] = useState(false);
     
         const navItems = [
           
-          "E-Commerce",
-          "Orders",
-          "Customers",
-          "Products",
-          "Reports",
-          "Settings",
+          "Teacher",
+          "Students",
+          "Parents",
+          "Events",
+          "Class",
+          "Attendance",
+          "Exam",
         ];
     return (
         <div className="flex h-screen overflow-hidden">
@@ -35,6 +45,20 @@ const Main = () => {
     {item}
   </Link>
 ))}
+ <div>
+    {
+       user ? <>
+       <Link onClick={handleLogOut}  className="flex items-center p-3 rounded-lg hover:bg-blue-gray-50 transition-colors cursor-pointer">
+            LogOut
+            </Link>
+       </> : <>
+       <Link to={'/signin'} className="flex items-center p-3 rounded-lg hover:bg-blue-gray-50 transition-colors cursor-pointer" >
+            Login
+            </Link>
+       </>
+    }
+ </div>
+
 
           </nav>
         </aside>
@@ -50,6 +74,9 @@ const Main = () => {
                 </button>
               </div>
               <nav className="flex flex-col gap-1 text-base text-blue-gray-700">
+              <Link className="flex items-center p-3 rounded-lg hover:bg-blue-gray-50 transition-colors cursor-pointer" to={'/'}>
+            Dashboard
+            </Link>
               {navItems.map((item, idx) => (
   <Link
   to={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
@@ -59,7 +86,19 @@ const Main = () => {
     {item}
   </Link>
 ))}
-
+ <div>
+    {
+       user ? <>
+       <Link onClick={handleLogOut}  className="flex items-center p-3 rounded-lg hover:bg-blue-gray-50 transition-colors cursor-pointer">
+            LogOut
+            </Link>
+       </> : <>
+       <Link to={'/signin'} className="flex items-center p-3 rounded-lg hover:bg-blue-gray-50 transition-colors cursor-pointer" >
+            Login
+            </Link>
+       </>
+    }
+ </div>
               </nav>
             </aside>
             <div
