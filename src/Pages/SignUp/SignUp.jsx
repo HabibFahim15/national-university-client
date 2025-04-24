@@ -3,13 +3,19 @@ import {
     Input,
     Typography,
   } from "@material-tailwind/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { useContext } from "react";
+import Swal from "sweetalert2";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 
-const SignIn = () => {
-  const {createUser} = useContext(AuthContext);
+const SignUp = () => {
+
+  const axiosPublic =useAxiosPublic();
+
+  const {createUser,updateUserProfile} = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleSignUp = event =>{
     event.preventDefault()
@@ -24,6 +30,45 @@ const SignIn = () => {
     .then(result =>{
       const loggedUser = result.user;
       console.log(loggedUser);
+      updateUserProfile(name, image)
+      .then(()=>{
+        console.log('user profile updated');
+       
+              const userInfo ={
+                name: name,
+                email: email,
+                role: role,
+                isVarified: false,
+                salary: 0
+              }
+
+              axiosPublic.post('/users', userInfo)
+              .then(res =>{
+                if(res.data.insertedId){
+                  console.log('user added the database');
+                  const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                      toast.onmouseenter = Swal.stopTimer;
+                      toast.onmouseleave = Swal.resumeTimer;
+                    }
+                  });
+                  Toast.fire({
+                    icon: "success",
+                    title: "Account created successfully"
+                  });
+                }
+              }
+                )
+
+
+              navigate('/')
+      })
+      .catch(error => console.log(error))
     })
   }
     return (
@@ -118,4 +163,4 @@ const SignIn = () => {
     );
 };
 
-export default SignIn;
+export default SignUp;

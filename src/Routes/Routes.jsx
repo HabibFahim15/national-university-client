@@ -26,31 +26,31 @@ const router = createBrowserRouter([
         // admin dashboard
         {
           path: '/Teacher',
-          element: <Teacher />
+          element: <PrivateRoute><Teacher /></PrivateRoute>
         },
         {
           path: '/students', 
-          element: <Students />
+          element: <PrivateRoute><Students /></PrivateRoute> 
         },
         {
           path: '/parents',
-          element:<Parents />
+          element:<PrivateRoute><Parents /></PrivateRoute>
         },
         {
           path: '/exam',
-          element: <Exam />
+          element: <PrivateRoute><Exam /></PrivateRoute>
         },
         {
           path: '/events',
-          element: <Events />
+          element: <PrivateRoute><Events /></PrivateRoute>
         },
         {
           path: '/attendance',
-          element: <Attendance />
+          element: <PrivateRoute><Attendance /></PrivateRoute>
         },
         {
           path: '/class',
-          element: <Class />
+          element: <PrivateRoute><Class /></PrivateRoute>
         }
         
 
