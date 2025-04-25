@@ -1,34 +1,33 @@
 import { Link } from "react-router-dom";
 
-const Sidebar = ({  handleLogOut, roleItems, onClose }) => {
-    // Get role from roleItems prop (which is now the user object)
+const Sidebar = ({ handleLogOut, roleItems, onClose }) => {
     const role = roleItems?.role || '';
     
-    // Define menu items for each role
+    // All roles now point to the root path ("/") for dashboard
     const menuItems = {
         admin: [
-            { path: "/admin-dashboard", label: "Dashboard", icon: "🏠" },
+            { path: "/", label: "Dashboard", icon: "🏠" },
             { path: "/users", label: "User Management", icon: "👥" },
             { path: "/courses", label: "Course Management", icon: "📚" },
             { path: "/settings", label: "System Settings", icon: "⚙️" },
             { path: "/reports", label: "Reports", icon: "📊" },
         ],
         teacher: [
-            { path: "/techer-dashboard", label: "Dashboard", icon: "🏠" },
+            { path: "/", label: "Dashboard", icon: "🏠" },
             { path: "/my-classes", label: "My Classes", icon: "👨‍🏫" },
             { path: "/assignments", label: "Assignments", icon: "📝" },
             { path: "/grades", label: "Gradebook", icon: "📈" },
             { path: "/attendance", label: "Attendance", icon: "✅" },
         ],
         student: [
-            { path: "/student-dashboard", label: "Dashboard", icon: "🏠" },
+            { path: "/", label: "Dashboard", icon: "🏠" },
             { path: "/my-courses", label: "My Courses", icon: "📖" },
             { path: "/assignments", label: "Assignments", icon: "📝" },
             { path: "/grades", label: "My Grades", icon: "📊" },
             { path: "/schedule", label: "Schedule", icon: "🗓️" },
         ],
         parent: [
-            { path: "/parent-dashboard", label: "Dashboard", icon: "🏠" },
+            { path: "/", label: "Dashboard", icon: "🏠" },
             { path: "/children", label: "My Children", icon: "👨‍👩‍👧‍👦" },
             { path: "/progress", label: "Progress Reports", icon: "📈" },
             { path: "/attendance", label: "Attendance", icon: "✅" },
