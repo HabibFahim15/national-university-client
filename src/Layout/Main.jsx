@@ -30,7 +30,7 @@ const Main = () => {
   }, [user]);
 console.log(currentUser);
   return (
-    <div className="flex h-screen overflow-hidden">
+    <div className="flex h-screen overflow-hidden bg-[#f9f9f9]">
       <Sidebar
         user={user}
         roleItems={currentUser} // Now passing the whole user object
@@ -49,7 +49,7 @@ console.log(currentUser);
         {/* Sticky Navbar */}
         <StickyNavbar />
 
-        <div className="p-4">
+        <div className="p-4 ">
           <Outlet />
         </div>
       </main>
