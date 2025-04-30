@@ -5,6 +5,12 @@ import SignUp from "../Pages/SignUp/SignUp"
 import Error from "../Pages/Error/Error";
 import Dashboard from "../Pages/Dashboard/AllDashboard/Dashboard";
 import PrivateRoute from "./PrivateRoute";
+import AllStudent from "../Pages/Dashboard/admin/StudentsManagement/AllStudent";
+import Reports from "../Pages/Dashboard/admin/Reports";
+import Notice from "../Pages/Dashboard/admin/Notice";
+import AllClasses from "../Pages/Dashboard/admin/AllClasses";
+import AllParents from "../Pages/Dashboard/admin/ParentsManagement/AllParents";
+import AllTeachers from "../Pages/Dashboard/admin/TeachersManagement/AllTeachers";
 
 
 const router = createBrowserRouter([
@@ -18,7 +24,30 @@ const router = createBrowserRouter([
             element: <PrivateRoute><Dashboard /></PrivateRoute>
         },
         // admin dashboard
-       
+       {
+        path: '/admin-students',
+        element: <PrivateRoute><AllStudent /></PrivateRoute>
+       },
+       {
+        path: '/admin-teachers',
+        element: <PrivateRoute><AllTeachers /></PrivateRoute>
+       },
+       {
+        path: '/admin-parents',
+        element: <PrivateRoute><AllParents /></PrivateRoute>
+       },
+       {
+        path: '/admin-classes',
+        element: <PrivateRoute><AllClasses /></PrivateRoute>
+       },
+       {
+        path: '/admin-notice',
+        element: <PrivateRoute><Notice /></PrivateRoute>
+       },
+       {
+        path: '/admin-reports',
+        element: <PrivateRoute><Reports /></PrivateRoute>
+       }
         
 
       ]

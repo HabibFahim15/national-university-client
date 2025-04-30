@@ -25,7 +25,7 @@ export function StickyNavbar() {
   );
 
   return (
-    <div className="w-full px-4 lg:px-8 sticky top-0 z-50 bg-white text-black shadow">
+    <div className="w-full px-4  lg:px-8 sticky top-0 z-50 bg-white text-black shadow">
       <Navbar className="rounded-none shadow-none border-b p-4">
         <div className="flex justify-between items-center">
           <Typography className="text-lg text-black font-bold">My Dashboard</Typography>

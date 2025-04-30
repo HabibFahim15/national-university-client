@@ -7,10 +7,12 @@ const Sidebar = ({ handleLogOut, roleItems, onClose }) => {
     const menuItems = {
         admin: [
             { path: "/", label: "Dashboard", icon: "🏠" },
-            { path: "/users", label: "User Management", icon: "👥" },
-            { path: "/courses", label: "Course Management", icon: "📚" },
-            { path: "/settings", label: "System Settings", icon: "⚙️" },
-            { path: "/reports", label: "Reports", icon: "📊" },
+            { path: "/admin-students", label: "Student Management", icon: "👨‍🎓" },
+            { path: "/admin-teachers", label: "Teacher Management", icon: "👨" },
+            { path: "/admin-parents", label: "Parent Management", icon: "👪" },
+            { path: "/admin-classes", label: "Class Management", icon: "👨‍🏫" },
+            { path: "/admin-notice", label: "Notice", icon: "📢" },
+            { path: "/admin-reports", label: "Reports", icon: "📊" },
         ],
         teacher: [
             { path: "/", label: "Dashboard", icon: "🏠" },

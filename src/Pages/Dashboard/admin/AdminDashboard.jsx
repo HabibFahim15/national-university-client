@@ -7,12 +7,13 @@ const AdminDashboard = () => {
       <div className="my-4 md:my-8">
         <Header />
       </div>
-
       <div>
         <Overview />
       </div>
 
-      <div></div>
+      <div>
+          
+      </div>
     </section>
   );
 };
