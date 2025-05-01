@@ -1,3 +1,4 @@
+// Main.jsx
 import { useContext, useEffect, useState } from "react";
 import { Menu } from "lucide-react";
 import { Outlet } from "react-router-dom";
@@ -15,7 +16,6 @@ const Main = () => {
   useEffect(() => {
     const fetchCurrentUser = async () => {
       try {
-        // Replace with your real API endpoint to get the logged-in user's data
         const res = await fetch(`http://localhost:5000/users/${user?.email}`);
         const data = await res.json();
         setCurrentUser(data);
@@ -28,28 +28,32 @@ const Main = () => {
       fetchCurrentUser();
     }
   }, [user]);
-console.log(currentUser);
+
   return (
     <div className="flex h-screen overflow-hidden bg-[#f9f9f9]">
       <Sidebar
         user={user}
-        roleItems={currentUser} // Now passing the whole user object
+        roleItems={currentUser}
         handleLogOut={handleLogOut}
         onClose={sidebarOpen ? () => setSidebarOpen(false) : null}
       />
-
+      
       <main className="flex-1 overflow-y-auto">
-        {/* Mobile Sidebar Toggle */}
-        <div className="lg:hidden px-4 py-2">
-          <button onClick={() => setSidebarOpen(true)}>
-            <Menu className="w-6 h-6" />
-          </button>
+        {/* Combined Mobile Header */}
+        <div className="lg:hidden sticky top-0 z-50 bg-white shadow">
+          <div className="flex items-center justify-between px-4 py-3">
+            <button onClick={() => setSidebarOpen(true)}>
+              <Menu className="w-6 h-6 text-gray-700" />
+            </button>
+            <h1 className="text-lg font-bold text-gray-800">School Management</h1>
+            <div className="w-6"></div> {/* Spacer for balance */}
+          </div>
         </div>
 
-        {/* Sticky Navbar */}
+        {/* Desktop Navbar */}
         <StickyNavbar />
 
-        <div className="p-4 ">
+        <div className="p-4">
           <Outlet />
         </div>
       </main>
