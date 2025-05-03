@@ -11,6 +11,10 @@ import Notice from "../Pages/Dashboard/admin/Notice";
 import AllClasses from "../Pages/Dashboard/admin/AllClasses";
 import AllParents from "../Pages/Dashboard/admin/ParentsManagement/AllParents";
 import AllTeachers from "../Pages/Dashboard/admin/TeachersManagement/AllTeachers";
+import MyClasses from "../Pages/Dashboard/teacher/myClasses/MyClasses";
+import Assignments from "../Pages/Dashboard/teacher/Assignments/Assignments";
+import GradeBook from "../Pages/Dashboard/teacher/GradeBook/GradeBook";
+import Attendance from "../Pages/Dashboard/teacher/Attendance/Attendance";
 
 
 const router = createBrowserRouter([
@@ -47,7 +51,25 @@ const router = createBrowserRouter([
        {
         path: '/admin-reports',
         element: <PrivateRoute><Reports /></PrivateRoute>
+       },
+       // Teacher dashboard
+       {
+        path: '/my-classes',
+        element: <PrivateRoute><MyClasses /></PrivateRoute>
+       },
+       {
+        path: '/assignments',
+        element: <PrivateRoute><Assignments /></PrivateRoute>
+       },
+       {
+        path: '/grades',
+        element: <PrivateRoute><GradeBook /></PrivateRoute>
+       },
+       {
+        path: '/attendance',
+        element: <PrivateRoute><Attendance /></PrivateRoute>
        }
+       // Student dashboard
         
 
       ]
