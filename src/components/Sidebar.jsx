@@ -26,7 +26,7 @@ const Sidebar = ({ handleLogOut, roleItems, onClose }) => {
             { path: "/my-courses", label: "My Courses", icon: "📖" },
             { path: "/assignments", label: "Assignments", icon: "📝" },
             { path: "/grades", label: "My Grades", icon: "📊" },
-            { path: "/schedule", label: "Schedule", icon: "🗓️" },
+            { path: "/schedule", label: "Schedule", icon: "🗓️" }
         ],
         parent: [
             { path: "/", label: "Dashboard", icon: "🏠" },
