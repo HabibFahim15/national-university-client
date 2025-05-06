@@ -17,6 +17,7 @@ import GradeBook from "../Pages/Dashboard/teacher/GradeBook/GradeBook";
 import Attendance from "../Pages/Dashboard/teacher/Attendance/Attendance";
 import MyCoursePage from "../Pages/Dashboard/Student/MyCourse/MyCoursePage";
 import AssignmentsPage from "../Pages/Dashboard/Student/AssignmentPage/AssignmentPage";
+import GradesPage from "../Pages/Dashboard/Student/GradePage/GradePage";
 
 
 const router = createBrowserRouter([
@@ -80,6 +81,10 @@ const router = createBrowserRouter([
           path: '/assignments',
           element: <PrivateRoute><AssignmentsPage /></PrivateRoute>
         },
+        {
+          path: '/grades',
+          element: <PrivateRoute><GradesPage /></PrivateRoute>
+        }
 
       ]
       
