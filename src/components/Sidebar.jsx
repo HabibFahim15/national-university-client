@@ -16,10 +16,10 @@ const Sidebar = ({ handleLogOut, roleItems, onClose }) => {
         ],
         teacher: [
             { path: "/", label: "Dashboard", icon: "🏠" },
-            { path: "/my-classes", label: "My Classes", icon: "👨‍🏫" },
-            { path: "/assignments", label: "Assignments", icon: "📝" },
-            { path: "/grades", label: "Gradebook", icon: "📈" },
-            { path: "/attendance", label: "Attendance", icon: "✅" },
+            { path: "/teacher-my-classes", label: "My Classes", icon: "👨‍🏫" },
+            { path: "/teacher-assignments", label: "Assignments", icon: "📝" },
+            { path: "/teacher-grades", label: "Gradebook", icon: "📈" },
+            { path: "/teacher-attendance", label: "Attendance", icon: "✅" },
         ],
         student: [
             { path: "/", label: "Dashboard", icon: "🏠" },
