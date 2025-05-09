@@ -21,6 +21,8 @@ import GradesPage from "../Pages/Dashboard/Student/GradePage/GradePage";
 import SchedulePage from "../Pages/Dashboard/Student/Schedule/StudentSchedule";
 import ParentChildrenPage from "../Pages/Dashboard/Parent/myChildren/ParentChildrenPage";
 import ProgressReportPage from "../Pages/Dashboard/Parent/ProgressReportPage/ProgressReportPage";
+import ParentAttendancePage from "../Pages/Dashboard/Parent/attendance/Attendance";
+import ParentMessagesPage from "../Pages/Dashboard/Parent/Messages/Messages";
 
 
 const router = createBrowserRouter([
@@ -101,6 +103,14 @@ const router = createBrowserRouter([
         {
           path: '/progress',
           element: <PrivateRoute><ProgressReportPage /></PrivateRoute>
+        },
+        {
+          path: '/attendance',
+          element: <PrivateRoute><ParentAttendancePage /></PrivateRoute>
+        },
+        {
+          path: '/messages',
+          element: <PrivateRoute><ParentMessagesPage /></PrivateRoute>
         }
       ]
       
