@@ -19,6 +19,7 @@ import MyCoursePage from "../Pages/Dashboard/Student/MyCourse/MyCoursePage";
 import AssignmentsPage from "../Pages/Dashboard/Student/AssignmentPage/AssignmentPage";
 import GradesPage from "../Pages/Dashboard/Student/GradePage/GradePage";
 import SchedulePage from "../Pages/Dashboard/Student/Schedule/StudentSchedule";
+import ParentChildrenPage from "../Pages/Dashboard/Parent/myChildren/ParentChildrenPage";
 
 
 const router = createBrowserRouter([
@@ -89,8 +90,13 @@ const router = createBrowserRouter([
         {
           path: '/schedule',
           element: <PrivateRoute><SchedulePage /></PrivateRoute>
-        }
+        },
 
+        // Parent dashboard
+        {
+          path: '/children',
+          element: <PrivateRoute><ParentChildrenPage /></PrivateRoute>
+        }
       ]
       
     },
